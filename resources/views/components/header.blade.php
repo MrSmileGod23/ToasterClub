@@ -25,8 +25,8 @@
                     <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('/')}}">Профиль</a></button>
                 @endauth
                 @guest()
-                        <button class="bg-white px-5 rounded-2xl"><a href="{{route('login')}}">Войти</a></button>
-                        <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('register')}}">Регистрация</a></button>
+                        <a class="bg-white px-5 rounded-2xl flex items-center" href="{{route('login')}}"><button >Войти</button></a>
+                        <a class="bg-black text-white px-5 rounded-2xl flex items-center" href="{{route('register')}}"> <button >Регистрация</button></a>
                 @endguest
             </div>
         </nav>
