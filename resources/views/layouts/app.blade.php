@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="yandex-verification" content="91e37e8dd4622c35" />
+    <link rel="icon" href="{{  URL::asset('storage/img/logo.svg') }}">
     <title>@yield('title')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -49,22 +50,62 @@
             font-weight: 900;
             src: url('{{  URL::asset('storage/fonts/MultiroundPro.otf') }}');
         }
+        @font-face {
+            font-family: 'Nunito Sans';
+
+            src: url('{{  URL::asset('storage/fonts/NunitoSans-Regular.ttf') }}');
+        }
         body{
            font-family: "MultiroundPro";
         }
+
+        .underline-bold {
+            text-decoration: none;
+            position: relative;
+        }
+        .underline-bold:after {
+            position: absolute;
+            height: 6px;
+            margin: 0 auto;
+            content: '';
+            left: 0;
+            right: 0;
+            color: #000;
+            background-color: black;
+            border-radius: 50px;
+            bottom: -4px;
+        }
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #F3F3F3;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #FAAE18;
+            border: 3px solid #FAAE18;
+        }
+        .NunitoSans{
+            font-family: "Nunito Sans";
+        }
     </style>
 </head>
-<body class="antialiased bg-layout">
+<body class="antialiased bg-layout " >
+<div class="flex flex-col h-screen">
 
+    <header>
+        @include('components.header')
+    </header>
 
-    @include('components.header')
+    <main class="h-full mb-20">
+    @yield('content')
+    </main >
 
-    <!-- Yandex.Metrika informer -->
-    <a href="https://metrika.yandex.ru/stat/?id=93085342&amp;from=informer"
-       target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/93085342/3_0_FFCE38FF_FAAE18FF_0_pageviews"
-                                           style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="93085342" data-lang="ru" /></a>
-    <!-- /Yandex.Metrika informer -->
+    <footer>
+    @include('components.footer')
+    </footer>
 
+</div>
 
 </body>
 </html>
