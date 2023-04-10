@@ -19,7 +19,7 @@
                     boxShadow: {
                         'header': '0px 4px 4px rgba(0, 0, 0, 0.25)',
                         'nav': '0px -4px 19px -3px rgba(0, 0, 0, 0.6)',
-
+                        'button':'0px 4px 4px rgba(0, 0, 0, 0.25)',
 
                     }
                 }
@@ -44,7 +44,7 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/93085342" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-        <style>
+    <style>
         @font-face {
             font-family: 'MultiroundPro';
             font-style: normal;
@@ -57,7 +57,7 @@
             src: url('{{  URL::asset('storage/fonts/NunitoSans-Regular.ttf') }}');
         }
         body{
-           font-family: "MultiroundPro";
+            font-family: "MultiroundPro";
         }
 
         .underline-bold {
@@ -91,22 +91,29 @@
         }
     </style>
 </head>
-<body class="antialiased bg-layout " >
-<div class="flex flex-col h-screen">
-
-    <header>
-        @include('components.header')
-    </header>
-
-    <main class="h-full pb-20">
-    @yield('content')
-    </main>
-
-    <footer>
-    @include('components.footer')
-    </footer>
-
+<body class="antialiased h-screen " >
+<div class="grid grid-cols-1 lg:grid-cols-2 h-full w-full">
+    <div class="flex justify-center bg-main  hidden lg:flex">
+        <a class="flex" href="{{ route('/') }}">
+            <div class="flex flex-col justify-center gap-20">
+                <div class="text-center flex flex-col gap-4">
+                    <p class="text-6xl">TOASTERCLUB</p>
+                    <p class="text-4xl">Российский клуб владельцев тостеров</p>
+                </div>
+                <img class="mx-auto" src="{{ URL::asset('storage/img/LogoAuth.svg') }}" />
+            </div>
+        </a>
+    </div>
+    <div class="flex bg-layout  flex-col justify-center items-center">
+                <p class="text-6xl text-main mb-10">@yield('title')</p>
+                <form method="POST" action="{{ route($method) }}">
+                    @csrf
+                    @yield('content')
+                    <button class="bg-main text-white mt-10 px-40 py-2 shadow-button text-4xl rounded-xl border-4 border-white "> @yield('title') </button>
+                </form>
+    </div>
 </div>
+
 
 </body>
 </html>

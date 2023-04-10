@@ -21,8 +21,13 @@
                     <li class="nav-item {{ Request::path() ==  '/members' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Участники</a></li>
                 </ul>
             <div class="h-full flex justify-between gap-5 py-3.5">
-                <button class="bg-white px-5 rounded-2xl">Войти</button>
-                <button class="bg-black text-white px-5 rounded-2xl">Регистрация</button>
+                @auth()
+                    <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('/')}}">Профиль</a></button>
+                @endauth
+                @guest()
+                        <button class="bg-white px-5 rounded-2xl"><a href="{{route('login')}}">Войти</a></button>
+                        <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('register')}}">Регистрация</a></button>
+                @endguest
             </div>
         </nav>
     </div>
