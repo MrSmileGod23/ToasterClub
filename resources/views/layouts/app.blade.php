@@ -98,7 +98,7 @@
         @include('components.header')
     </header>
 
-    <main class="h-full pb-20">
+    <main class="pb-20">
     @yield('content')
     </main>
 
