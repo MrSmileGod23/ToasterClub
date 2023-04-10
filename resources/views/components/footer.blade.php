@@ -6,7 +6,7 @@
         <a href="https://metrika.yandex.ru/stat/?id=93085342&amp;from=informer"
            target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/93085342/3_0_FFCE38FF_FAAE18FF_0_pageviews"
                                                style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="93085342" data-lang="ru" /></a>
-   
+
     </div>
 
 </div>
