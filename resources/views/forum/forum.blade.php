@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="flex h-full col-span-2 text-xl NunitoSans justify-end items-end">
-                            15 авг 2020, 10:51
+                            {{$subcategory->created_at}}
                         </div>
 
                     </div>

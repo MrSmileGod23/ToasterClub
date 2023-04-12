@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
@@ -56,51 +57,71 @@ class DatabaseSeeder extends Seeder
                 'category_id' => '1',
                 'title' => 'Мероприятия',
                 'text' => 'Клубные выставки, поездки и т.д.',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'category_id' => '1',
                 'title' => 'Встречи',
                 'text' => 'На дорогах, еженедельные и т.д.',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'category_id' => '1',
                 'title' => 'Владельцы и владелицы',
                 'text' => 'Новички отписываются тут, выкладываем свои фотки и т.д.',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'category_id' => '1',
                 'title' => 'Путешествие',
                 'text' => 'Описываем свои автопробеги, впечатления от дороги и пункта назначения...',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'category_id' => '1',
                 'title' => 'Клубная аттрибутика',
                 'text' => 'Майки, флаги, стаканчики, наклейки, рамки',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'category_id' => '1',
                 'title' => 'Разные события',
                 'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'category_id' => '1',
                 'title' => 'Дни рождения',
                 'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'category_id' => '1',
                 'title' => 'Друзья клуба',
                 'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'category_id' => '1',
                 'title' => 'Партнеры клуба',
                 'text' => 'Предложения от партнеров клуба. Создание новых тем только по запросу, через администратора.',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'category_id' => '2',
                 'title' => 'Центральный регион',
                 'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]
         ]);
         DB::table('topics')->insert([
