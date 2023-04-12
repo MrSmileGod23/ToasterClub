@@ -10,7 +10,5 @@ class PageController extends Controller
         return view('main');
     }
 
-    public function forum(){
-        return view('forum.forum');
-    }
+
 }
