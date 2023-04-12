@@ -105,11 +105,12 @@
         </a>
     </div>
     <div class="flex bg-layout  flex-col justify-center items-center">
-                <p class="text-6xl text-main mb-10">@yield('title')</p>
+                <p class="text-4xl sm:text-6xl text-main mb-10">@yield('title')</p>
+        <p class="text-xl sm:text-3xl text-black mb-5 flex text-center lg:hidden ">  <a class="flex" href="{{ route('/') }}">Вернуться назад</a></p>
                 <form method="POST" action="{{ route($method) }}">
                     @csrf
                     @yield('content')
-                    <button class="bg-main text-white mt-10 px-40 py-2 shadow-button text-4xl rounded-xl border-4 border-white "> @yield('title') </button>
+                    <button class="flex mx-auto bg-main text-white mt-10 px-16 sm:px-30 xl:px-40 py-2 shadow-button text-xl sm:text-4xl rounded-xl border-4 border-white "> @yield('title') </button>
                 </form>
     </div>
 </div>
