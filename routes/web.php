@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[PageController::class,'index'])->name('/');
+Route::get('/forum',[PageController::class,'forum'])->name('forum');
 
 Route::get('/login',[AuthController::class,'showLoginForm'])->name('login');
 Route::post('/login',[AuthController::class,'login'])->name('loginPOST');

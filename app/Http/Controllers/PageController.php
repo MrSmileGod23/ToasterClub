@@ -9,4 +9,8 @@ class PageController extends Controller
     public function index(){
         return view('main');
     }
+
+    public function forum(){
+        return view('forum.forum');
+    }
 }
