@@ -3,10 +3,10 @@
 
 
 @section('content')
-<div class="max-w-7xl pt-5 mx-auto h-full grid grid-cols-5">
-    <div class="col-span-4 pr-60">
-        <p class="text-6xl pb-10">КТО ТАКИЕ ТОСТЕРЫ?</p>
-        <p class="NunitoSans text-2xl">Мы владельцы автомобилей, обладающих уникальной формой кузова, напоминающей в некотором роде тостер, гордимся своими машинами. Наши автомобили, такие как Toyota bB, Scion xB, Daihatsu Coo, Rumion и другие, выделяются на дороге своей привлекательной внешностью и стилем. Они привлекают внимание людей и вызывают у них удивление.
+<div class="max-w-7xl pt-5 mx-auto h-full grid grid-cols-5 px-5 xl:px-0">
+    <div class=" md:p-0  col-span-5 md:col-span-4 sm:pr-20 lg:pr-60">
+        <p class="text-5xl md:text-6xl pb-10">КТО ТАКИЕ ТОСТЕРЫ?</p>
+        <p class="NunitoSans text-xl sm:text-2xl">Мы владельцы автомобилей, обладающих уникальной формой кузова, напоминающей в некотором роде тостер, гордимся своими машинами. Наши автомобили, такие как Toyota bB, Scion xB, Daihatsu Coo, Rumion и другие, выделяются на дороге своей привлекательной внешностью и стилем. Они привлекают внимание людей и вызывают у них удивление.
             <br> <br> <br>
             Мы увлекаемся тюнингом и кастомизацией наших автомобилей, чтобы сделать их еще более уникальными и индивидуальными. Мы стремимся принимать участие в различных мероприятиях, связанных с нашими автомобилями, таких как выставки, сходки и соревнования.
             <br> <br> <br>
@@ -14,7 +14,7 @@
             <br> <br> <br>
             В целом, наши автомобили "тостеры" являются не только транспортными средствами, но и способом выражения нашей индивидуальности и стиля.</p>
     </div>
-    <div class="flex flex-col gap-24 pt-20 col-span-1">
+    <div class=" flex-col gap-24 pt-20 col-span-1 hidden md:flex">
         <img src="{{ URL::asset('storage/img/bb.svg') }}" />
         <img src="{{ URL::asset('storage/img/bB2.svg') }}" />
         <img src="{{ URL::asset('storage/img/Daihatsu Coo.svg') }}" />
