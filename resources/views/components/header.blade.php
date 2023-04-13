@@ -25,7 +25,7 @@
                 <li class="nav-item {{ Request::path() ==  'market' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Барахолка</a></li>
                 <li class="nav-item {{ Request::path() ==  'members' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Участники</a></li>
             </ul>
-            <div class="h-full flex flex-col justify-between text-center gap-5 py-3.5">
+            <div class="h-full flex flex-col justify-between text-center gap-5 py-3.5 ">
                 @auth()
                     <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('/')}}">Профиль</a></button>
                 @endauth
@@ -64,10 +64,10 @@
 @if(Request::is('/'))
 
 @else
-    <div class="bg-white h-16">
+    <div class="bg-white h-auto md:h-16">
         <div class="max-w-7xl mx-auto h-full">
-            <nav class="h-full text-xl w-full flex justify-between">
-                <ul class="h-full flex items-center gap-5 ">
+            <nav class="py-3 md:py-0 h-full text-xl w-full flex justify-center  md:justify-between">
+                <ul class="h-full  flex flex-col md:flex-row  items-center gap-5 px-5 xl:px-0">
 
                     @if(Request::is('forum'))
                         <li class="nav-item {{ Request::path() ==  '/' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"  class="nav-link">Создать статью</a></li>

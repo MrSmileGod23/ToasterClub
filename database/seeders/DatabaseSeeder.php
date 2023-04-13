@@ -122,6 +122,293 @@ class DatabaseSeeder extends Seeder
                 'text' => '',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '2',
+                'title' => 'Северо-Западный регион',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '2',
+                'title' => 'Южный регион',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '2',
+                'title' => 'Приволжский регион',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '2',
+                'title' => 'Уральский регион',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '2',
+                'title' => 'Сибирский регион',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '2',
+                'title' => 'Дальневосточный регион',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '3',
+                'title' => 'Общие вопросы',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '3',
+                'title' => 'Ремонт',
+                'text' => 'Отчеты о ремонтах своими силами',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '3',
+                'title' => 'Тюнинг',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '3',
+                'title' => 'F.A.Q.',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '3',
+                'title' => 'Эксплуатация',
+                'text' => 'Куда, чего, сколько лить в граммах',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '4',
+                'title' => 'Общие вопросы',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '4',
+                'title' => 'Ремонт',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '4',
+                'title' => 'Тюнинг',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '4',
+                'title' => 'F.A.Q.',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '4',
+                'title' => 'Эксплуатация',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '5',
+                'title' => 'Общие вопросы',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '5',
+                'title' => 'Ремонт',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '5',
+                'title' => 'Тюнинг',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '5',
+                'title' => 'F.A.Q.',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '5',
+                'title' => 'Эксплуатация',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '6',
+                'title' => 'Все о других, не таких квадратных авто',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '6',
+                'title' => 'Байки, багги, квадро',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '6',
+                'title' => 'Водный транспорт',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '7',
+                'title' => 'Целые bB и Xb',
+                'text' => 'Продаем и покупаем табуретки целиком',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '7',
+                'title' => 'bB и xB по кускам',
+                'text' => 'Покупаем/продаем отдельные части табуреток',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '7',
+                'title' => 'QNC по кускам',
+                'text' => 'Покупка/продажа запчастей на Toyota bB II и Daihatsu Materia',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '7',
+                'title' => 'Другое',
+                'text' => 'Все, что не касается машин',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '7',
+                'title' => 'Отдам даром',
+                'text' => 'Все что угодно за спасибо или за пиво.',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '7',
+                'title' => 'Белый и черный списки',
+                'text' => 'Отзывы о покупателях и продавцах',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '7',
+                'title' => 'Попрошайка',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '8',
+                'title' => 'Бортовые журналы безумных тюнингистов',
+                'text' => 'Здесь каждый может себе завести топик о том, как он лично тюнит свою коробочку',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '8',
+                'title' => 'Отзывы',
+                'text' => 'Каждый владелец может рассказать впечатления от bB/xB',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '8',
+                'title' => 'Отзывы об автосервисах',
+                'text' => 'Пишем про плюсы и минусы автосервисов, не являющихся партнерами клуба',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '9',
+                'title' => 'Новости',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '9',
+                'title' => 'Работа форума',
+                'text' => 'Замечания, предложения, сообщения об ошибках',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '9',
+                'title' => 'Интересное',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '9',
+                'title' => 'Юмор =)',
+                'text' => '',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '9',
+                'title' => 'Black Log',
+                'text' => 'Отписываемся АРГУМЕНТИРОВАННО где наших соклубников обманули/кинули',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '9',
+                'title' => 'bBод и закон',
+                'text' => 'Темы посвященные правовым вопросам, как-то что делать при дтп, взаимоотношения с гаишниками, с другими органами власти.',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'category_id' => '9',
+                'title' => 'Курилка',
+                'text' => 'Можно говорить обо всем, только без мата и наездов.',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]
         ]);
         DB::table('topics')->insert([
@@ -129,7 +416,25 @@ class DatabaseSeeder extends Seeder
                 'subcategory_id' => '1',
                 'user_id' => '1',
                 'title' => 'фестиваль в г.Дубна М.о 23 июля',
-                'text' => 'Други!! Москва и область!! :) немного поздно спохватился !))'
+                'text' => 'Други!! Москва и область!! :) немного поздно спохватился !))',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'subcategory_id' => '1',
+                'user_id' => '1',
+                'title' => 'сходка в челябинске',
+                'text' => 'Други!! Челябинск и область!! :) немного поздно спохватился !))',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'subcategory_id' => '1',
+                'user_id' => '1',
+                'title' => 'фест в екб',
+                'text' => 'Други!! Екб и область!! :) немного поздно спохватился !))',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
         ]);
     }

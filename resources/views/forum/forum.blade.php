@@ -3,8 +3,8 @@
 
 
 @section('content')
-    <div class="max-w-7xl pt-5 mx-auto h-full grid grid-cols-7 px-5 xl:px-0">
-        <div class=" col-span-5 pr-10">
+    <div class="max-w-7xl pt-5 mx-auto h-full grid grid-rows-2 lg:grid-cols-7 px-5 xl:px-0">
+        <div class="col-span-5 pr-0 lg:pr-10">
             @foreach($treeView as $key => $category)
             <div id="dropdown-wrapper-{{$key+1}}" class="flex flex-col mb-4">
                 <button onclick="toggleMenu{{$key+1}}()" class="flex justify-between items-center w-full py-5 px-3 bg-main text-2xl text-black shadow-xl">
@@ -40,22 +40,71 @@
             </div>
             @endforeach
         </div>
-        <div class="col-span-2">
-{{--            <div id="dropdown-wrapper2" class="flex flex-col">--}}
-{{--                <button onclick="toggleMenu2()"--}}
-{{--                        class="flex w-full bg-amber-500 hover:bg-amber-600 focus:bg-rose-500 text-white">--}}
-{{--                    Toggle Menu</button>--}}
-{{--                <div id="menu2" class="hidden flex flex-col bg-white drop-shadow-md">--}}
-{{--                    <a class="px-5 py-3 hover:bg-amber-300 border-b border-gray-200" href="#">About KindaCode.com</a>--}}
-{{--                    <a class="px-5 py-3 hover:bg-amber-300 border-b border-gray-200" href="#">Contact Us</a>--}}
-{{--                    <a class="px-5 py-3 hover:bg-amber-300 border-b border-gray-200" href="#">Privacy Policy</a>--}}
-{{--                    <a class="px-5 py-3 hover:bg-amber-300" href="#">Hello There</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+        <div class="col-span-5 lg:col-span-2  grid-rows-2">
+            <div id="dropdown-wrapper-lastThemes" class="flex flex-col mb-4">
+                <button onclick="toggleMenulastThemes()" class="flex justify-between items-center w-full py-5 px-3 bg-main text-2xl text-black shadow-xl">
+                    <p>Последние темы</p>
+                    <img id="arrowlastThemes" class="rotate-180" src="{{ URL::asset('storage/img/ARROW.svg') }}" />
+                </button>
+                <div id="menulastThemes" class="hidden flex flex-col bg-white drop-shadow-md">
+                    @foreach($lastTopics as $lastTopic)
+                    <a href="">
+                        <div class="px-5 py-3 NunitoSans items-center border-b-2 border-main">
+                            <p class="text-xl capitalize">{{$lastTopic->title}}  </p>
+                            <p class="text-sm">{{$lastTopic->text}}  </p>
+                            <p class="text-sm">{{$lastTopic->created_at}}  </p>
+                        </div>
+                    </a>
+                    @endforeach
+                </div>
+            </div>
+            <div id="dropdown-wrapper-Forum" class="flex flex-col mb-4">
+                <button onclick="toggleMenuForum()" class="flex justify-between items-center w-full py-5 px-3 bg-main text-2xl text-black shadow-xl">
+                    <p>Статистика форума</p>
+                    <img id="arrowForum" class="rotate-180" src="{{ URL::asset('storage/img/ARROW.svg') }}" />
+                </button>
+                <div id="menuForum" class="hidden flex flex-col bg-white drop-shadow-md">
+                        <a href="">
+                            <div class="px-5 py-3 grid grid-rows-4 NunitoSans items-center border-b-2 border-main">
+                                <p class="text-base">Тем: {{$countTopics}} </p>
+                                <p class="text-base">Категорий: {{$countCategories}} </p>
+                                <p class="text-base">Подкатегорий: {{$countSubcategories}} </p>
+                                <p class="text-base">Пользователей: {{$countUsers}}</p>
+                                <p class="text-base">Последний пользователь: {{$lastUser->login}}</p>
+                            </div>
+                        </a>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Javascript code -->
     <script>
+        var menuForum = document.getElementById("menuForum");
+        var arrowForum = document.getElementById("arrowForum");
+
+        function toggleMenuForum() {
+            if (menuForum.classList.contains('hidden')) {
+                menuForum.classList.remove('hidden');
+                arrowForum.classList.remove('rotate-180');
+            } else {
+                arrowForum.classList.add('rotate-180');
+                menuForum.classList.add('hidden');
+            }
+        }
+
+        var menulastThemes = document.getElementById("menulastThemes");
+        var arrowlastThemes = document.getElementById("arrowlastThemes");
+
+        function toggleMenulastThemes() {
+            if (menulastThemes.classList.contains('hidden')) {
+                menulastThemes.classList.remove('hidden');
+                arrowlastThemes.classList.remove('rotate-180');
+            } else {
+                arrowlastThemes.classList.add('rotate-180');
+                menulastThemes.classList.add('hidden');
+            }
+        }
+
         var menu1 = document.getElementById("menu1");
         var arrow1 = document.getElementById("arrow1");
 
