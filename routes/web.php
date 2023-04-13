@@ -11,9 +11,9 @@ Route::get('/',[PageController::class,'index'])->name('/');
 
 
 Route::group(['prefix' => 'forum'], function() {
-
-Route::get('/',[ForumController::class,'index'])->name('forum.index');
-
+    Route::get('/',[ForumController::class,'index'])->name('forum.index');
+    Route::get('/search',[ForumController::class,'searchIndex'])->name('forum.search');
+    Route::post('/search',[ForumController::class,'searchPost'])->name('forum.search');
 });
 
 

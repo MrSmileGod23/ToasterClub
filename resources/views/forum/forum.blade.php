@@ -1,33 +1,33 @@
 @extends('layouts.app')
-@section('title','Главная')
+@section('title','Форум')
 
 
 @section('content')
-    <div class="max-w-7xl pt-5 mx-auto h-full grid grid-rows-2 lg:grid-cols-7 px-5 xl:px-0">
+    <div class="max-w-7xl pt-5 mx-auto h-full grid grid-rows-1 lg:grid-cols-7 px-5 xl:px-0">
         <div class="col-span-5 pr-0 lg:pr-10">
             @foreach($treeView as $key => $category)
             <div id="dropdown-wrapper-{{$key+1}}" class="flex flex-col mb-4">
                 <button onclick="toggleMenu{{$key+1}}()" class="flex justify-between items-center w-full py-5 px-3 bg-main text-2xl text-black shadow-xl">
-                    <p>{{$category->title}}</p>
+                        <p class="text-base sm:text-2xl text-left">{{$category->title}}</p>
                     <img id="arrow{{$key+1}}" class="rotate-180" src="{{ URL::asset('storage/img/ARROW.svg') }}" />
                 </button>
                 <div id="menu{{$key+1}}" class="hidden flex flex-col bg-white drop-shadow-md">
                     @if($category->subcategories->count())
                         @foreach($category->subcategories as $subcategory)
                     <a href="">
-                    <div class="px-5 py-3 grid grid-cols-6 items-center border-b-2 border-main">
-                        <img class="h-16 col-span-1" src="{{ URL::asset('storage/img/logo.svg') }}" />
+                    <div class="px-5 py-3 grid  sm:grid-cols-6 items-center border-b-2 border-main">
+                        <img class="h-16 col-span-1 hidden sm:block" src="{{ URL::asset('storage/img/logo.svg') }}" />
                         <div class="flex flex-col col-span-3 NunitoSans">
                             <div>
-                                <p class="text-2xl  font-extrabold">{{$subcategory->title}}  </p>
-                                <p class="text-xl">{{$subcategory->text}}  </p>
+                                <p class="text-lg sm:text-2xl  font-extrabold">{{$subcategory->title}}  </p>
+                                <p class="text-base sm:text-xl">{{$subcategory->text}}  </p>
                             </div>
-                            <div class="flex gap-5 text-xl ">
+                            <div class="flex gap-5 text-base sm:text-xl">
                                 <p>Тем: {{$subcategory->topics->count()}} </p>
                                 <p>Сообщений:</p>
                             </div>
                         </div>
-                        <div class="flex h-full col-span-2 text-xl NunitoSans justify-end items-end">
+                        <div class="hidden sm:flex  h-full col-span-2 text-base sm:text-xl NunitoSans justify-end items-end">
                             {{$subcategory->created_at}}
                         </div>
 
@@ -43,7 +43,7 @@
         <div class="col-span-5 lg:col-span-2  grid-rows-2">
             <div id="dropdown-wrapper-lastThemes" class="flex flex-col mb-4">
                 <button onclick="toggleMenulastThemes()" class="flex justify-between items-center w-full py-5 px-3 bg-main text-2xl text-black shadow-xl">
-                    <p>Последние темы</p>
+                    <p class="text-base sm:text-2xl">Последние темы</p>
                     <img id="arrowlastThemes" class="rotate-180" src="{{ URL::asset('storage/img/ARROW.svg') }}" />
                 </button>
                 <div id="menulastThemes" class="hidden flex flex-col bg-white drop-shadow-md">
@@ -60,7 +60,7 @@
             </div>
             <div id="dropdown-wrapper-Forum" class="flex flex-col mb-4">
                 <button onclick="toggleMenuForum()" class="flex justify-between items-center w-full py-5 px-3 bg-main text-2xl text-black shadow-xl">
-                    <p>Статистика форума</p>
+                    <p class="text-base sm:text-2xl">Статистика форума</p>
                     <img id="arrowForum" class="rotate-180" src="{{ URL::asset('storage/img/ARROW.svg') }}" />
                 </button>
                 <div id="menuForum" class="hidden flex flex-col bg-white drop-shadow-md">

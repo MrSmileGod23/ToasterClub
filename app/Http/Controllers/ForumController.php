@@ -31,4 +31,18 @@ class ForumController extends Controller
             'lastUser' => $lastUser,
         ]);
     }
+
+    public function searchIndex(){
+        return view('forum.search',[
+
+        ]);
+    }
+
+    public function searchPost(Request $request){
+        $value = $request->search;
+        $topics = Topic::where('title','LIKE',"%{$value}%")->orderBy('title')->paginate(10);
+        return view('forum.search',[
+            'topics' => $topics,
+        ]);
+    }
 }
