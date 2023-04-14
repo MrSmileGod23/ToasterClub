@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="yandex-verification" content="91e37e8dd4622c35" />
     <meta name="keywords" content="toasterclub, форум тостеров, toyotabb, bB forum, вопрос по toyota bB, сходки toyota bB, тостеры, форум , авто" />
-    <link rel="icon" href="{{  URL::asset('storage/img/logo.svg') }}">
+    <link rel="icon" href="{{  URL::asset('storage/img/logo.svg') }}"  type="image/x-icon">
     <title>@yield('title')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>

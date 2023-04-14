@@ -12,8 +12,12 @@ Route::get('/',[PageController::class,'index'])->name('/');
 
 Route::group(['prefix' => 'forum'], function() {
     Route::get('/',[ForumController::class,'index'])->name('forum.index');
-    Route::get('/search',[ForumController::class,'searchIndex'])->name('forum.search');
-    Route::post('/search',[ForumController::class,'searchPost'])->name('forum.search');
+    Route::get('/search',[ForumController::class,'searchIndex'])->name('forum.search.index');
+    Route::post('/search',[ForumController::class,'searchStore'])->name('forum.search.store');
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('/topic/create', [ForumController::class, 'topicCreate'])->name('forum.topic.create');
+        Route::post('/topic/create', [ForumController::class, 'topicStore'])->name('forum.topic.store');
+    });
 });
 
 

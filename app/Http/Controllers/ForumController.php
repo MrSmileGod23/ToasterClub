@@ -37,12 +37,26 @@ class ForumController extends Controller
 
         ]);
     }
-
-    public function searchPost(Request $request){
+//->orWhereRaw('lower(text) LIKE ? COLLATE NOCASE', ['%' . strtolower($value) . '%'])
+    public function searchStore(Request $request){
         $value = $request->search;
-        $topics = Topic::where('title','LIKE',"%{$value}%")->orderBy('title')->paginate(10);
+        $topics = Topic::whereRaw('lower(title) like ?', ['%' . strtolower($value) . '%'])->orderBy('title')->paginate(10);
         return view('forum.search',[
             'topics' => $topics,
+        ]);
+    }
+
+
+
+    public function topicCreate(){
+        return view('forum.topic_create',[
+
+        ]);
+    }
+
+    public function topicStore(){
+        return view('forum.topic_create',[
+
         ]);
     }
 }

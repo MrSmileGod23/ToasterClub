@@ -70,8 +70,8 @@
                 <ul class="h-full  flex flex-col md:flex-row  items-center gap-5 px-5 xl:px-0">
 
                     @if(Request::is('forum') or Request::is('forum/search'))
-                        <li class="nav-item {{ Request::path() ==  '' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"  class="nav-link">Создать тему</a></li>
-                        <li class="nav-item {{ Request::path() ==  'forum/search' ? 'underline-bold' : ''  }}"><a href="{{route('forum.search')}}"  class="nav-link">Поиск темы</a></li>
+                        <li class="nav-item {{ Request::path() ==  'topic/create' ? 'underline-bold' : ''  }}"><a href="{{route('forum.topic.create')}}"  class="nav-link">Создать тему</a></li>
+                        <li class="nav-item {{ Request::path() ==  'forum/search' ? 'underline-bold' : ''  }}"><a href="{{route('forum.search.index')}}"  class="nav-link">Поиск темы</a></li>
                     @endif
                 </ul>
             </nav>

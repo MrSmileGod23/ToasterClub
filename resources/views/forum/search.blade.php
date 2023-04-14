@@ -5,7 +5,7 @@
 @section('content')
     <div class="max-w-7xl pt-5 mx-auto h-auto px-5 xl:px-0">
         <div>
-            <form class="bg-main grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-5 gap-5 h-full justify-between p-4 shadow-header" method="POST" action="{{route('forum.search')}}">
+            <form class="bg-main grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-5 gap-5 h-full justify-between p-4 shadow-header" method="POST" action="{{route('forum.search.store')}}">
                 @csrf
                 <input class="rounded-2xl shadow-header h-full md:col-span-4 px-4 text-2xl NunitoSans" type="text" name="search"/>
                 <button class="bg-white text-main shadow-header px-3 py-2 rounded-2xl text-2xl md:col-span-1">Поиск</button>
