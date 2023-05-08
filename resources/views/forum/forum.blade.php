@@ -14,7 +14,7 @@
                 <div id="menu{{$key+1}}" class="hidden flex flex-col bg-white drop-shadow-md">
                     @if($category->subcategories->count())
                         @foreach($category->subcategories as $subcategory)
-                    <a href="">
+                    <a href="{{route('forum.themes.all',[$subcategory->id])}}">
                     <div class="px-5 py-3 grid  sm:grid-cols-6 items-center border-b-2 border-main">
                         <img class="h-16 col-span-1 hidden sm:block" src="{{ URL::asset('storage/img/logo.svg') }}" />
                         <div class="flex flex-col col-span-3 NunitoSans">

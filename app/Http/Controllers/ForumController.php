@@ -32,6 +32,22 @@ class ForumController extends Controller
         ]);
     }
 
+    public function themesAll($id){
+        $subcategory = Subcategory::where('id',$id)->first();
+        $themes = Topic::where('subcategory_id',$id)->get();
+        return view('forum.themes',[
+            'subcategory' => $subcategory,
+            'themes' => $themes,
+        ]);
+    }
+
+    public function themeGet($id){
+        $theme = Topic::where('id',$id)->first();
+        return view('forum.theme',[
+            'theme' => $theme,
+        ]);
+    }
+
     public function searchIndex(){
         return view('forum.search',[
 

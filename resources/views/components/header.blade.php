@@ -47,7 +47,7 @@
                     <li class="nav-item {{ Request::path() ==  'articles' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Статьи</a></li>
                     <li class="nav-item {{ Request::path() ==  'gallery' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Галлерея</a></li>
                     <li class="nav-item {{ Request::path() ==  'market' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Барахолка</a></li>
-                    <li class="nav-item {{ Request::path() ==  'members' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Участники</a></li>
+                    <li class="nav-item {{ Request::path() ==  'members' ? 'underline-bold' : ''  }}"><a href="{{route('members.index')}}"   class="nav-link">Участники</a></li>
                 </ul>
             <div class="h-full flex justify-between gap-5 py-3.5">
                 @auth()
@@ -61,7 +61,7 @@
         </nav>
     </div>
 </div>
-@if(Request::is('/'))
+@if(Request::is('/') or Request::is('forum/themes/*') or Request::is('forum/theme/*') or Request::is('members'))
 
 @else
     <div class="bg-white h-auto md:h-16">
