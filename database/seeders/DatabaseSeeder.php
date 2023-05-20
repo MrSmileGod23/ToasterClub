@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +19,7 @@ class DatabaseSeeder extends Seeder
             [
                 'email' => 'admin@mail.ru',
                 'login' => 'admin',
-                'password' => 'admin',
+                'password' => Hash::make('admin'),
                 'car' => 'Toyota bB',
                 'car_year' => '2003',
             ],
@@ -436,6 +437,15 @@ class DatabaseSeeder extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
+        ]);
+        DB::table('answer_topics')->insert([
+            [
+                'user_id' => '1',
+                'topic_id' => '1',
+                'text' => 'фестиваль в г.Дубна М.о 23 июля',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ]
         ]);
     }
 }

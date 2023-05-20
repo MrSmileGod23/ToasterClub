@@ -7,7 +7,7 @@
         <div class="col-span-7">
             <p class="text-4xl md:text-5xl pb-10">{{$subcategory->title}}</p>
             @foreach($themes as $key => $theme)
-            <a href="{{route('forum.theme.get',[$theme->id])}}">
+            <a href="{{route('forum.topic.show',[$theme->id])}}">
                 <div class="px-5 py-3 grid  sm:grid-cols-6 items-center border-b-2 border-main">
                     <img class="h-16 col-span-1 hidden sm:block" src="{{ URL::asset('storage/img/logo.svg') }}" />
                     <div class="flex flex-col col-span-3 NunitoSans">

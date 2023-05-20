@@ -9,6 +9,13 @@ class Topic extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'subcategory_id',
+        'title',
+        'text'
+    ];
+
     public function subcategory() {
 
         return $this->belongsTo(Subcategory::class, 'subcategory_id');

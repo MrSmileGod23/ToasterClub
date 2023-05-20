@@ -61,7 +61,7 @@
         </nav>
     </div>
 </div>
-@if(Request::is('/') or Request::is('forum/themes/*') or Request::is('forum/theme/*') or Request::is('members'))
+@if(Request::is('/')  or Request::is('forum/topic/*') or Request::is('members') or Request::is('forum/topic/create'))
 
 @else
     <div class="bg-white h-auto md:h-16">
@@ -70,12 +70,16 @@
                 <ul class="h-full  flex flex-col md:flex-row  items-center gap-5 px-5 xl:px-0">
 
                     @if(Request::is('forum') or Request::is('forum/search'))
-                        <li class="nav-item {{ Request::path() ==  'topic/create' ? 'underline-bold' : ''  }}"><a href="{{route('forum.topic.create')}}"  class="nav-link">Создать тему</a></li>
+                        <li class="nav-item {{ Request::path() ==  'forum/search' ? 'underline-bold' : ''  }}"><a href="{{route('forum.search.index')}}"  class="nav-link">Поиск темы</a></li>
+                    @endif
+
+                    @if(Request::is('forum/topics/*'))
+                        <li class="nav-item {{ Request::path() ==  'topic/create' ? 'underline-bold' : ''  }}"><a href="{{route('forum.topic.create',['id' => $subcategory->id])}}"  class="nav-link">Создать тему</a></li>
                         <li class="nav-item {{ Request::path() ==  'forum/search' ? 'underline-bold' : ''  }}"><a href="{{route('forum.search.index')}}"  class="nav-link">Поиск темы</a></li>
                     @endif
                 </ul>
             </nav>
         </div>
     </div>
-    @endif
+@endif
 
