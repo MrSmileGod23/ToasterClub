@@ -12,18 +12,18 @@ class TopicController extends Controller
 {
     public function all($id){
         $subcategory = Subcategory::where('id',$id)->first();
-        $themes = Topic::where('subcategory_id',$id)->get();
+        $topics = Topic::where('subcategory_id',$id)->get();
         return view('forum.themes',[
             'subcategory' => $subcategory,
-            'themes' => $themes,
+            'topics' => $topics,
         ]);
     }
 
     public function show($id){
-        $theme = Topic::where('id',$id)->first();
+        $topic = Topic::where('id',$id)->first();
         $answers = AnswerTopic::where('topic_id',$id)->get();
         return view('forum.theme',[
-            'theme' => $theme,
+            'topic' => $topic,
             'answers' => $answers,
         ]);
     }
@@ -36,7 +36,6 @@ class TopicController extends Controller
     }
 
     public function store(Request $request){
-
 
         $topic=Topic::create([
             'subcategory_id' => $request->category,

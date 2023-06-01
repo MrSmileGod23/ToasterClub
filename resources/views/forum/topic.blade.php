@@ -1,14 +1,14 @@
 @extends('layouts.app')
-@section('title',$theme->title)
+@section('title',$topic->title)
 
 
 @section('content')
     <div class="max-w-7xl pt-5 mx-auto h-full grid grid-rows-1 lg:grid-cols-7 px-5 xl:px-0">
         <div class="col-span-7">
-            <p class="text-lg md:text-xl mb-5">{{$theme->subcategory->title}}</p>
-            <p class="text-2xl md:text-5xl ">{{$theme->title}}</p>
-            <p class="text-xl md:text-2xl NunitoSans ">{{$theme->text}}</p>
-            <p class="text-sm md:text-lg mb-10 NunitoSans ">{{$theme->created_at}}</p>
+            <p class="text-lg md:text-xl mb-5">{{$topic->subcategory->title}}</p>
+            <p class="text-2xl md:text-5xl ">{{$topic->title}}</p>
+            <p class="text-xl md:text-2xl NunitoSans ">{{$topic->text}}</p>
+            <p class="text-sm md:text-lg mb-10 NunitoSans ">{{$topic->created_at}}</p>
         </div>
 
         @auth()
