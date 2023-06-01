@@ -7,14 +7,20 @@ use Illuminate\Http\Request;
 
 class AnswerTopicController extends Controller
 {
-    public function store (Request $request,$id)
+
+    public function store (Request $request)
     {
-        $answer = AnswerTopic::create([
-            'user_id'  =>auth()->id(),
-            'theme_id' => $id,
-            'info'   =>$request->info
+
+        $request->validate([
+            'text' => 'required'
         ]);
 
-        return redirect()->action([TopicController::class,'show'], ['id' => $id ]);
+        $answer = AnswerTopic::create([
+            'user_id'  =>auth()->id(),
+            'topic_id' => $request->id,
+            'text'   =>$request->text
+        ]);
+
+        return redirect()->route('forum.topic.show',['id'=>$request->id]);
     }
 }

@@ -98,7 +98,7 @@
         @include('components.header')
     </header>
 
-    <main class="pb-20 h-auto">
+    <main class="pb-20 h-auto flex-grow">
     @yield('content')
     </main>
 

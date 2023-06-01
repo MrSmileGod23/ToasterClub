@@ -12,10 +12,22 @@
         </div>
 
         @auth()
-            <a class="bg-black text-white px-2  text-sm sm:text-md  rounded-2xl mb-10  py-3" href="{{route('forum.answer.create')}}">Добавить ответ</a>
+            <form action="{{route('forum.answer.store')}}" method="POST" class="col-span-7">
+                @csrf
+                    <input value="{{$topic->id}}" hidden name="id">
+                    <label for="text">
+                      Введите сообщение
+                    </label>
+                    <textarea  class="shadow border-4 NunitoSans text-lg border-main rounded-2xl appearance-none border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="text"></textarea>
+                    @if($errors->has('text'))
+                        <div class="text-red-500 text-sm mt-1 absolute">{{ $errors->first('text') }}</div>
+                    @endif
+                    <button type="submit" class="mt-8 bg-black text-white px-2  text-sm sm:text-md  rounded-2xl mb-10  py-3">Отправить</button>
+            </form>
         @endauth
-
-
+        <div class="col-span-7 mb-12">
+                {{ $answers->links('pagination.tailwind') }}
+        </div>
         @foreach($answers as $answer)
         <div class="col-span-7">
             <div class="px-5 py-3  grid grid-cols-12 items-center border-b-2 border-main drop-shadow-md">
@@ -26,17 +38,23 @@
                 <div class="col-span-1">
 
                 </div>
-                <div class="flex flex-col NunitoSans col-span-10">
+                <div class="flex flex-col NunitoSans col-span-8">
                     <div>
                         <p class="text-lg sm:text-2xl  font-extrabold">  </p>
                         <p class="text-base sm:text-xl"> </p>
                     </div>
                     <div class="flex gap-5 text-base sm:text-xl">
-                        <div>{{$answer->text}}</div>
+                        <pre>{{$answer->text}}</pre>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <div class=" text-base text-right">
+                        {{$answer->created_at}}
                     </div>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
+
 @endsection

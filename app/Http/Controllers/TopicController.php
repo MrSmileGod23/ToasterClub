@@ -21,7 +21,7 @@ class TopicController extends Controller
 
     public function show($id){
         $topic = Topic::where('id',$id)->first();
-        $answers = AnswerTopic::where('topic_id',$id)->get();
+        $answers = AnswerTopic::orderBy('created_at','desc')->where('topic_id',$id)->paginate(5);
         return view('forum.topic',[
             'topic' => $topic,
             'answers' => $answers,

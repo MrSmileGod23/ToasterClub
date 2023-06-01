@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('vk')->nullable();
             $table->string('discord')->nullable();
             $table->boolean('access_level')->default(0);
+            $table->timestamp("last_online_at")->useCurrent();
             $table->rememberToken();
             $table->timestamps();
         });

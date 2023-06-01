@@ -1,4 +1,4 @@
-<div class="bg-main h-20">
+<div class="bg-main h-20 mt-auto">
 <div class="max-w-7xl  mx-auto h-full">
     <div class="flex flex-col sm:flex-row justify-between items-center h-full text-4xl">
         <p>2023</p>
