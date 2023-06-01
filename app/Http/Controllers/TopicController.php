@@ -13,7 +13,7 @@ class TopicController extends Controller
     public function all($id){
         $subcategory = Subcategory::where('id',$id)->first();
         $topics = Topic::where('subcategory_id',$id)->get();
-        return view('forum.themes',[
+        return view('forum.topics',[
             'subcategory' => $subcategory,
             'topics' => $topics,
         ]);
@@ -22,7 +22,7 @@ class TopicController extends Controller
     public function show($id){
         $topic = Topic::where('id',$id)->first();
         $answers = AnswerTopic::where('topic_id',$id)->get();
-        return view('forum.theme',[
+        return view('forum.topic',[
             'topic' => $topic,
             'answers' => $answers,
         ]);
