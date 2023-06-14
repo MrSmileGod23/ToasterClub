@@ -20,14 +20,14 @@
             <ul class="h-full flex flex-col items-center gap-5 ">
                 <li class="nav-item {{ Request::path() ==  '/' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"  class="nav-link">Главная</a></li>
                 <li class="nav-item {{ Request::path() ==  'forum' ? 'underline-bold' : ''  }}"><a href="{{route('forum.index')}}"   class="nav-link">Форум</a></li>
-                <li class="nav-item {{ Request::path() ==  'articles' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Статьи</a></li>
-                <li class="nav-item {{ Request::path() ==  'gallery' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Галлерея</a></li>
-                <li class="nav-item {{ Request::path() ==  'market' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Барахолка</a></li>
-                <li class="nav-item {{ Request::path() ==  'members' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Участники</a></li>
+                <li class="nav-item {{ Request::path() ==  'articles' ? 'underline-bold' : ''  }}"><a href="{{route('articles.index')}}"   class="nav-link">Статьи</a></li>
+                <li class="nav-item {{ Request::path() ==  'gallery' ? 'underline-bold' : ''  }}"><a href="{{route('gallery.index')}}"   class="nav-link">Галлерея</a></li>
+                <li class="nav-item {{ Request::path() ==  'market' ? 'underline-bold' : ''  }}"><a href="{{route('market.index')}}"   class="nav-link">Барахолка</a></li>
+                <li class="nav-item {{ Request::path() ==  'members' ? 'underline-bold' : ''  }}"><a href="{{route('members.index')}}"   class="nav-link">Участники</a></li>
             </ul>
             <div class="h-full flex flex-col justify-between text-center gap-5 py-3.5 ">
                 @auth()
-                    <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('/')}}">Профиль</a></button>
+                    <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('profile',['id' => Auth::user()->id])}}">Профиль</a></button>
                 @endauth
                 @guest()
                     <a class="bg-white px-5 rounded-2xl flex text-center justify-center items-center" href="{{route('login')}}"><button class="text-center flex justify-center items-center">Войти</button></a>
@@ -44,14 +44,14 @@
                 <ul class="h-full flex items-center gap-2 lg:gap-5  ">
                     <li class="nav-item {{ Request::path() ==  '/' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"  class="nav-link">Главная</a></li>
                     <li class="nav-item {{ Request::path() ==  'forum' ? 'underline-bold' : ''  }}"><a href="{{route('forum.index')}}"   class="nav-link">Форум</a></li>
-                    <li class="nav-item {{ Request::path() ==  'articles' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Статьи</a></li>
-                    <li class="nav-item {{ Request::path() ==  'gallery' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Галлерея</a></li>
-                    <li class="nav-item {{ Request::path() ==  'market' ? 'underline-bold' : ''  }}"><a href="{{route('/')}}"   class="nav-link">Барахолка</a></li>
+                    <li class="nav-item {{ Request::path() ==  'articles' ? 'underline-bold' : ''  }}"><a href="{{route('articles.index')}}"   class="nav-link">Статьи</a></li>
+                    <li class="nav-item {{ Request::path() ==  'gallery' ? 'underline-bold' : ''  }}"><a href="{{route('gallery.index')}}"   class="nav-link">Галлерея</a></li>
+                    <li class="nav-item {{ Request::path() ==  'market' ? 'underline-bold' : ''  }}"><a href="{{route('market.index')}}"   class="nav-link">Барахолка</a></li>
                     <li class="nav-item {{ Request::path() ==  'members' ? 'underline-bold' : ''  }}"><a href="{{route('members.index')}}"   class="nav-link">Участники</a></li>
                 </ul>
             <div class="h-full flex justify-between gap-5 py-3.5">
                 @auth()
-                    <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('/')}}">Профиль</a></button>
+                    <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('profile',['id' => Auth::user()->id])}}">Профиль</a></button>
                 @endauth
                 @guest()
                         <a class="bg-white px-5 rounded-2xl flex items-center" href="{{route('login')}}"><button >Войти</button></a>
@@ -61,7 +61,7 @@
         </nav>
     </div>
 </div>
-@if(Request::is('/')  or Request::is('forum/topic/*') or Request::is('members') or Request::is('forum/topic/create'))
+@if(Request::is('/') or Request::is('profile/*')  or Request::is('forum/topic/*') or Request::is('members') or Request::is('forum/topic/create'))
 
 @else
     <div class="bg-white h-auto md:h-16">
