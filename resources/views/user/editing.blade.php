@@ -13,7 +13,7 @@
                 @csrf
 
                 <div class="mb-6">
-                    <label for="user" class="block text-xl sm:text-4xl font-medium text-black text-center">Редактирование профия </label>
+                    <label for="user" class="block text-xl sm:text-4xl font-medium text-black text-center">Редактирование профиля </label>
                     <input hidden name="user" id="user" value="{{$user->id}}">
                 </div>
 
@@ -49,7 +49,8 @@
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <button class="bg-black text-white px-8 mx-auto text-sm sm:text-xl  rounded-2xl py-3" type="submit">Обновить данные</button>
+                    Временно не работает
+{{--                    <button class="bg-black text-white px-8 mx-auto text-sm sm:text-xl  rounded-2xl py-3" type="submit">Обновить данные</button>--}}
                 </div>
             </form>
         </div>
