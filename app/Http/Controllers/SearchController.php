@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
     public function index(){
+        $topics = Topic::paginate(10)->all();
         return view('forum.search',[
-
+            'topics' => $topics,
         ]);
     }
 
