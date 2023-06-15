@@ -34,6 +34,7 @@ Route::group(['prefix' => 'market'], function() {
 
 Route::group(['prefix' => 'members'], function() {
     Route::get('/',[MebmerController::class,'index'])->name('members.index');
+    Route::post('/',[MebmerController::class,'store'])->name('members.search');
 });
 
 Route::group(['prefix' => 'forum'], function() {

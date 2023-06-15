@@ -13,4 +13,12 @@ class MebmerController extends Controller
                 'users' => $users
         ]);
     }
+
+    public function store(Request $request){
+        $value = $request->search;
+        $users = User::whereRaw('lower(login) like ?', ['%' . strtolower($value) . '%'])->orderBy('login')->paginate(10);
+        return view('members.members',[
+            'users' => $users,
+        ]);
+    }
 }
