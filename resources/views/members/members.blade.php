@@ -37,6 +37,9 @@
                         </div>
                     </a>
                 @endforeach
+                    <div class="col-span-7 mb-12">
+                        {{ $users->links('pagination.tailwind') }}
+                    </div>
             @endisset
 
         </div>
