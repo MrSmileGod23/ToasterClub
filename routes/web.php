@@ -26,6 +26,7 @@ Route::group(['prefix' => 'articles'], function() {
 
 Route::group(['prefix' => 'gallery'], function() {
     Route::get('/',[GalleryController::class,'index'])->name('gallery.index');
+    Route::post('/',[GalleryController::class,'store'])->name('gallery.store');
 });
 
 Route::group(['prefix' => 'market'], function() {

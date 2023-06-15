@@ -61,7 +61,7 @@
         </nav>
     </div>
 </div>
-@if(Request::is('/') or Request::is('profile/*')  or Request::is('forum/topic/*') or Request::is('members') or Request::is('forum/topic/create'))
+@if(Request::is('/') or Request::is('profile/*')  or Request::is('forum/topic/*') or Request::is('members') or Request::is('forum/topic/create') or Request::is('gallery'))
 
 @else
     <div class="bg-white h-auto md:h-16">
