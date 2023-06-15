@@ -1,2 +1,13 @@
 *
+
+!fonts/
+!fonts/*
+
+!avatars/
+
+!gallery/
+
+!img/
+!img/*
+
 !.gitignore
