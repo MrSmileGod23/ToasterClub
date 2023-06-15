@@ -19,7 +19,7 @@
 
                 <div class="mb-6">
                     <label for="profile_photo_path" class="block   text-sm sm:text-2xl  font-medium text-black">Аватар</label>
-                    <input  type="file" name="profile_photo_path" id="profile_photo_path" autocomplete="profile_photo_path" value="{{$user->profile_photo_path}}" class="block w-full text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 sm:text-sm sm:leading-6">
+                    <input  type="file" name="profile_photo_path" id="profile_photo_path" autocomplete="profile_photo_path" value="{{$user->profile_photo_path}}" class="block mt-2 w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-main file:text-black hover:file:bg-amber-500">
                 </div>
 
                 <div class="mb-6">
