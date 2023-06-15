@@ -5,9 +5,7 @@ yarn-error.log
 
 # Laravel 4 specific
 bootstrap/compiled.php
-app/storage/app/public/avatars/
-app/storage/app/public/gallery/
-app/storage/app/public/img/
+app/storage/
 
 # Laravel 5 & Lumen specific
 public/storage
