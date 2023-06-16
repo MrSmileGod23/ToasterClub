@@ -30,7 +30,7 @@ class ForumController extends Controller
             'countCategories' => $countCategories,
             'countSubcategories' => $countSubcategories,
             'countUsers' => $countUsers,
-            'lastUser' => $lastUser,
+            'lastUser' => $lastUser
         ]);
     }
 }

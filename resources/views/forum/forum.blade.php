@@ -24,7 +24,7 @@
                             </div>
                             <div class="flex gap-5 text-base sm:text-xl">
                                 <p>Тем: {{$subcategory->topics->count()}} </p>
-                                <p>Сообщений:</p>
+                                <p>Сообщений: {{$subcategory->getAnswersCountAttribute()}}</p>
                             </div>
                         </div>
                         <div class="hidden sm:flex  h-full col-span-2 text-base sm:text-xl NunitoSans justify-end items-end">

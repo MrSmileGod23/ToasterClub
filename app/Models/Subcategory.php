@@ -20,4 +20,21 @@ class Subcategory extends Model
         return $this->hasMany(Topic::class);
 
     }
+
+    public function answers()
+    {
+
+        return $this->hasMany(AnswerTopic::class);
+
+    }
+
+    public function answerTopics()
+    {
+        return $this->hasManyThrough(AnswerTopic::class, Topic::class);
+    }
+
+    public function getAnswersCountAttribute()
+    {
+        return $this->answerTopics()->count();
+    }
 }
