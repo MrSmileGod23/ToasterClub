@@ -15,7 +15,7 @@ class TopicController extends Controller
         $topics = Topic::where('subcategory_id',$id)->get();
         return view('forum.topics',[
             'subcategory' => $subcategory,
-            'topics' => $topics,
+            'topics' => $topics
         ]);
     }
 

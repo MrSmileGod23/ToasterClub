@@ -16,7 +16,7 @@
                             <p class="text-base sm:text-xl">{{$topic->text}}  </p>
                         </div>
                         <div class="flex gap-5 text-base sm:text-xl">
-                            <p>Сообщений:</p>
+                            <p>Сообщений: {{$topic->answers->count()}}</p>
                         </div>
                     </div>
                     <div class="hidden sm:flex  h-full col-span-2 text-base sm:text-xl NunitoSans justify-end items-end">
