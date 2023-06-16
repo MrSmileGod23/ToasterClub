@@ -5,10 +5,10 @@
 @section('content')
 
     <div class="max-w-7xl pt-5 mx-auto h-full grid grid-cols-5 content-center  px-5 xl:px-0">
-        <div class="col-span-1">
+        <div class="col-span-1 hidden sm:block">
 
         </div>
-        <div class="container col-span-3 ">
+        <div class="container col-span-5 sm:col-span-3 ">
             <form class="mt-5" action="{{route('profile.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
@@ -63,7 +63,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-span-1">
+        <div class="col-span-1 hidden sm:block">
 
         </div>
     </div>
