@@ -6,6 +6,7 @@
     <meta name="yandex-verification" content="91e37e8dd4622c35" />
     <meta name="keywords" content="toasterclub, форум тостеров, toyotabb, bB forum, вопрос по toyota bB, сходки toyota bB, тостеры, форум , авто" />
     <link rel="icon" href="{{  URL::asset('storage/img/logo.svg') }}"  type="image/x-icon">
+    @stack('styles')
     <title>@yield('title')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -108,5 +109,6 @@
 
 </div>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+@stack('scripts')
 </body>
 </html>

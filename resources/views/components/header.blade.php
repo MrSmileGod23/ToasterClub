@@ -61,7 +61,7 @@
         </nav>
     </div>
 </div>
-@if(Request::is('/') or Request::is('profile/*') or Request::is('profile')  or Request::is('forum/topic/*') or Request::is('members') or Request::is('forum/topic/create') or Request::is('gallery'))
+@if(Request::is('/') or Request::is('profile/*') or Request::is('profile')  or Request::is('forum/topic/*') or Request::is('members') or Request::is('forum/topic/create') or Request::is('article/create') or Request::is('articles/*') or Request::is('gallery'))
 
 @else
     <div class="bg-white h-auto md:h-16">
@@ -76,6 +76,11 @@
                     @if(Request::is('forum/topics/*'))
                         <li class="nav-item {{ Request::path() ==  'topic/create' ? 'underline-bold' : ''  }}"><a href="{{route('forum.topic.create',['id' => $subcategory->id])}}"  class="nav-link">Создать тему</a></li>
                         <li class="nav-item {{ Request::path() ==  'forum/search' ? 'underline-bold' : ''  }}"><a href="{{route('forum.search.index')}}"  class="nav-link">Поиск темы</a></li>
+                    @endif
+
+                    @if(Request::is('articles'))
+                        <li class="nav-item {{ Request::path() ==  'article/create' ? 'underline-bold' : ''  }}"><a href="{{route('article.create')}}"  class="nav-link">Создать статью</a></li>
+                        <li class="nav-item {{ Request::path() ==  'article/search' ? 'underline-bold' : ''  }}"><a href="{{route('articles.search')}}"  class="nav-link">Поиск статьи</a></li>
                     @endif
                 </ul>
             </nav>
