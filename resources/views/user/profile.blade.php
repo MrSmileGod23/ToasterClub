@@ -22,6 +22,7 @@
                     <p>discord : <span class="NunitoSans">{{$user->discord}}</span> </p>
                     @if($user->is($current_user))
                     <a class="bg-black text-white px-5 py-2 rounded-2xl text-center" href="{{route('profile.create')}}">Редактировать</a>
+                    <a class="bg-black text-white px-5 py-2 rounded-2xl text-center" href="{{route('logout')}}">Выйти из аккаунта</a>
                     @endif
                 </div>
                 <div class="col-span-8 lg:col-span-6 mt-8 lg:mt-0 text-center px-14">

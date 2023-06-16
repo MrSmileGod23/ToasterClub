@@ -53,7 +53,7 @@ Route::group(['prefix' => 'forum'], function() {
 });
 
 
-
+Route::get('/profile/{id}',[ProfileController::class,'index'])->name('profile');
 Route::get('/login',[LoginController::class,'index'])->name('login');
 Route::post('/login',[LoginController::class,'store'])->name('login.store');
 Route::get('/register',[RegisterController::class,'index'])->name('register');
@@ -63,7 +63,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::get('/logout',[LogoutController::class,'store'])->name('logout');
 
-Route::get('/profile/{id}',[ProfileController::class,'index'])->name('profile');
+
 Route::get('/profile',[ProfileController::class,'create'])->name('profile.create');
 Route::post('/profile',[ProfileController::class,'store'])->name('profile.store');
 

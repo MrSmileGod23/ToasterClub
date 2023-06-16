@@ -5,7 +5,7 @@
 @section('content')
     <div class="max-w-7xl pt-5 mx-auto h-full grid grid-rows-1 lg:grid-cols-7 px-5 xl:px-0">
         <div class="col-span-7">
-            <p class="text-base sm:text-lg md:text-xl mb-5">{{$topic->subcategory->title}}</p>
+            <p class="text-base sm:text-lg md:text-xl mb-5"><a href="{{route('forum.topics.all',['id'=>$topic->subcategory->id])}}">{{$topic->subcategory->title}}</a></p>
             <p class="text-base sm:text-2xl md:text-5xl ">{{$topic->title}}</p>
             <p class="text-sm sm:text-xl md:text-2xl NunitoSans ">{{$topic->text}}</p>
             <p class="text-sm md:text-lg mb-10 NunitoSans ">{{$topic->created_at}}</p>
