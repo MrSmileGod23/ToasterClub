@@ -11,7 +11,7 @@
                     @if($user->profile_photo_path)
                         <img class="flex w-56 h-48 object-cover object-center mx-auto shadow rounded" src="{{ URL::asset('storage/avatars/'.$user->profile_photo_path) }}" alt="Изображение отсутствует">
                     @else
-                        <img class="flex w-56 h-48 object-cover object-center mx-auto shadow rounded" src="{{ URL::asset('storage/img/logo.svg')}}" alt="Изображение отсутствует">
+                        <img class="flex w-56 h-48 object-cover object-center mx-auto shadow rounded" src="{{ URL::asset('storage/img/AvatarNotFound.jpg')}}" alt="Изображение отсутствует">
                     @endif
                     <p>Никнейм : <span class="NunitoSans">{{$user->login}}</span></p>
                     <p>Машина : <span class="NunitoSans">{{$user->car}} {{$user->car_year}} г.</span> </p>

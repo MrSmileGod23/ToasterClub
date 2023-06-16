@@ -5,6 +5,11 @@
 @section('content')
     <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
 
+        @guest()
+
+            <p class="text-center text-2xl">Чтобы добавлять фотографии,нужно авторизоваться</p>
+
+        @endguest
         @auth()
             <form action="{{route('gallery.store')}}" method="POST" enctype="multipart/form-data" >
                 @csrf

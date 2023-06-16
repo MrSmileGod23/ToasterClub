@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'email' => 'admin@mail.ru',
-                'login' => 'admin',
-                'password' => Hash::make('admin'),
+                'login' => 'adminbB',
+                'password' => Hash::make('adminbB'),
                 'car' => 'Toyota bB',
                 'car_year' => '2003',
             ],
@@ -420,23 +420,7 @@ class DatabaseSeeder extends Seeder
                 'text' => 'Други!! Москва и область!! :) немного поздно спохватился !))',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'subcategory_id' => '1',
-                'user_id' => '1',
-                'title' => 'сходка в челябинске',
-                'text' => 'Други!! Челябинск и область!! :) немного поздно спохватился !))',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'subcategory_id' => '1',
-                'user_id' => '1',
-                'title' => 'фест в екб',
-                'text' => 'Други!! Екб и область!! :) немного поздно спохватился !))',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
+            ]
         ]);
         DB::table('answer_topics')->insert([
             [

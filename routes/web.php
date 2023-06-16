@@ -13,6 +13,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TopicController;
+use Illuminate\Http\File;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,13 +22,13 @@ Route::get('/',[PageController::class,'index'])->name('/');
 
 Route::group(['prefix' => 'articles'], function() {
     Route::get('/',[ArticleController::class,'index'])->name('articles.index');
-    Route::get('/{id}',[ArticleController::class,'show'])->name('article.show');
+    Route::get('/article/{id}',[ArticleController::class,'show'])->name('article.show');
     Route::group(['middleware' => 'auth'], function() {
-        Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
-        Route::post('/article/create', [ArticleController::class, 'store'])->name('article.store');
+        Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
+        Route::post('/create', [ArticleController::class, 'store'])->name('article.store');
     });
-    Route::get('/search', [ArticleController::class, 'search'])->name('articles.search');
-    Route::get('/post', [ArticleController::class, 'search.post'])->name('articles.search.post');
+    Route::get('/search', [ArticleController::class, 'search'])->name('article.search');
+    Route::post('/search', [ArticleController::class, 'searchPost'])->name('article.search.post');
 });
 
 

@@ -48,4 +48,19 @@ class ArticleController extends Controller
 
         return redirect()->route('articles.index');
     }
+
+    public function search(){
+        $articles = Article::paginate(10)->all();
+        return view('articles.search',[
+            'articles' => $articles,
+        ]);
+    }
+
+    public function searchPost(Request $request){
+        $value = $request->search;
+        $articles = Article::whereRaw('lower(title) like ?', ['%' . strtolower($value) . '%'])->orderBy('title')->paginate(10);
+        return view('articles.search',[
+            'articles' => $articles,
+        ]);
+    }
 }
