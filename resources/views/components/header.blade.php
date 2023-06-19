@@ -28,6 +28,9 @@
             <div class="h-full flex flex-col justify-between text-center gap-5 py-3.5 ">
                 @auth()
                     <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('profile',['id' => Auth::user()->id])}}">Профиль</a></button>
+                    @if(Auth::user()->isAdmin())
+                        <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('dashboard.index')}}">Админка</a></button>
+                    @endif
                 @endauth
                 @guest()
                     <a class="bg-white px-5 rounded-2xl flex text-center justify-center items-center" href="{{route('login')}}"><button class="text-center flex justify-center items-center">Войти</button></a>
@@ -52,10 +55,10 @@
             <div class="h-full flex justify-between gap-5 py-3.5">
                 @auth()
                     <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('profile',['id' => Auth::user()->id])}}">Профиль</a></button>
-                @endauth
                 @if(Auth::user()->isAdmin())
                     <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('dashboard.index')}}">Админка</a></button>
                 @endif
+                @endauth
                 @guest()
                         <a class="bg-white px-5 rounded-2xl flex items-center" href="{{route('login')}}"><button >Войти</button></a>
                         <a class="bg-black text-white px-5 rounded-2xl flex items-center" href="{{route('register')}}"> <button >Регистрация</button></a>
@@ -85,11 +88,12 @@
                         <li class="nav-item {{ Request::path() ==  'articles/create' ? 'underline-bold' : ''  }}"><a href="{{route('article.create')}}"  class="nav-link">Создать статью</a></li>
                         <li class="nav-item {{ Request::path() ==  'articles/search' ? 'underline-bold' : ''  }}"><a href="{{route('article.search')}}"  class="nav-link">Поиск статьи</a></li>
                     @endif
-
-                    @if(Auth::user()->isAdmin())
-                        <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('dashboard.users.index')}}">Пользователи</a></button>
-                        <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('dashboard.topics.index')}}">Темы</a></button>
-                    @endif
+                    @auth()
+                        @if(Auth::user()->isAdmin())
+                            <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('dashboard.users.index')}}">Пользователи</a></button>
+                            <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('dashboard.topics.index')}}">Темы</a></button>
+                        @endif
+                    @endauth
                 </ul>
             </nav>
         </div>

@@ -4,10 +4,10 @@
 
 @section('content')
     <div class="max-w-7xl pt-5 mx-auto h-full grid grid-cols-5 px-5 xl:px-0">
-        <div class=" col-span-5   ">
+        <div class=" col-span-5">
             <p class="text-2xl md:text-4xl pb-10">Профиль</p>
             <div class="grid grid-cols-9">
-                <div class="col-span-8 lg:col-span-3 shadow  p-5 bg-gray-100 flex flex-col gap-3">
+                <div class="col-span-9 lg:col-span-3 shadow  p-5 bg-gray-100 flex flex-col gap-3">
                     @if($user->profile_photo_path)
                         <img class="flex w-56 h-48 object-cover object-center mx-auto shadow rounded" src="{{ URL::asset('storage/avatars/'.$user->profile_photo_path) }}" alt="Изображение отсутствует">
                     @else
@@ -25,7 +25,7 @@
                     <a class="bg-black text-white px-5 py-2 rounded-2xl text-center" href="{{route('logout')}}">Выйти из аккаунта</a>
                     @endif
                 </div>
-                <div class="col-span-8 lg:col-span-6 mt-8 lg:mt-0 text-center px-14">
+                <div class="col-span-9 lg:col-span-6 mt-8 lg:mt-0 text-center px-14">
                     Темы пользователя
                     @foreach($topics as $topic)
                         <a href="{{route('forum.topic.show',[$topic->id])}}">
