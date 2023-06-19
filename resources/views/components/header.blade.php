@@ -53,6 +53,9 @@
                 @auth()
                     <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('profile',['id' => Auth::user()->id])}}">Профиль</a></button>
                 @endauth
+                @if(Auth::user()->isAdmin())
+                    <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('dashboard.index')}}">Админка</a></button>
+                @endif
                 @guest()
                         <a class="bg-white px-5 rounded-2xl flex items-center" href="{{route('login')}}"><button >Войти</button></a>
                         <a class="bg-black text-white px-5 rounded-2xl flex items-center" href="{{route('register')}}"> <button >Регистрация</button></a>
@@ -81,6 +84,11 @@
                     @if(Request::is('articles') or Request::is('articles/search'))
                         <li class="nav-item {{ Request::path() ==  'articles/create' ? 'underline-bold' : ''  }}"><a href="{{route('article.create')}}"  class="nav-link">Создать статью</a></li>
                         <li class="nav-item {{ Request::path() ==  'articles/search' ? 'underline-bold' : ''  }}"><a href="{{route('article.search')}}"  class="nav-link">Поиск статьи</a></li>
+                    @endif
+
+                    @if(Auth::user()->isAdmin())
+                        <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('dashboard.users.index')}}">Пользователи</a></button>
+                        <button class="bg-black text-white px-5 rounded-2xl"><a href="{{route('dashboard.topics.index')}}">Темы</a></button>
                     @endif
                 </ul>
             </nav>

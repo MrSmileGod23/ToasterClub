@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('adminbB'),
                 'car' => 'Toyota bB',
                 'car_year' => '2003',
+                'access_level' => '1'
             ],
         ]);
         DB::table('categories')->insert([

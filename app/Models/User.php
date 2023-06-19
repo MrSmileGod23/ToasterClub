@@ -52,4 +52,10 @@ class User extends Authenticatable
     protected $casts = [
         "last_online_at" => "datetime"
     ];
+
+
+
+    public function isAdmin(){
+        return $this->access_level === 1;
+    }
 }

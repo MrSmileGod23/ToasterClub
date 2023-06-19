@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnswerTopicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\LoginController;
@@ -74,5 +75,22 @@ Route::get('/logout',[LogoutController::class,'store'])->name('logout');
 
 Route::get('/profile',[ProfileController::class,'create'])->name('profile.create');
 Route::post('/profile',[ProfileController::class,'store'])->name('profile.store');
+
+});
+
+
+
+
+Route::group(['middleware' => ['auth', 'isadmin'], 'prefix' => 'admin'], function()
+{
+
+    Route::get('/',[AdminController::class,'index'])->name('dashboard.index');
+
+    Route::get('/users',[AdminController::class,'usersIndex'])->name('dashboard.users.index');
+    Route::get('/topics',[AdminController::class,'topicsIndex'])->name('dashboard.topics.index');
+
+    Route::post('/users/{id}',[AdminController::class,'usersDestroy'])->name('dashboard.users.destroy');
+
+    Route::post('/topics/{id}',[AdminController::class,'topicsDestroy'])->name('dashboard.topics.destroy');
 
 });
