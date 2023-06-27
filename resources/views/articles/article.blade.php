@@ -10,11 +10,11 @@
     <style>
 
     </style>
-    <div class="max-w-7xl pt-5 mx-auto h-full grid grid-rows-1 lg:grid-cols-7 px-5 xl:px-0">
+    <div class="mx-auto grid h-full max-w-7xl grid-rows-1 px-5 pt-5 lg:grid-cols-7 xl:px-0">
         <div class="col-span-7">
-            <p class="text-base sm:text-2xl md:text-5xl ">{{$article->title}}</p>
-            <div class="prose lg:prose-xl text-sm sm:text-xl md:text-2xl NunitoSans">{!! $article->text !!}</div>
-            <p class="text-sm md:text-lg mb-10 NunitoSans">{{$article->created_at}}</p>
+            <p class="text-base sm:text-2xl md:text-5xl">{{$article->title}}</p>
+            <div class="text-sm prose NunitoSans sm:text-xl md:text-2xl lg:prose-xl">{!! $article->text !!}</div>
+            <p class="mb-10 text-sm NunitoSans md:text-lg">{{$article->created_at}}</p>
         </div>
 
 {{--        @auth()--}}
@@ -24,11 +24,11 @@
 {{--                <label for="text" class="text-sm md:text-lg">--}}
 {{--                    Введите сообщение--}}
 {{--                </label>--}}
-{{--                <textarea  class="shadow border-4 NunitoSans text-lg border-main rounded-2xl appearance-none border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="text"></textarea>--}}
+{{--                <textarea  class="w-full appearance-none rounded rounded-2xl border-4 border px-2 py-2 text-lg leading-tight text-gray-700 shadow NunitoSans border-main focus:shadow-outline focus:outline-none" name="text"></textarea>--}}
 {{--                @if($errors->has('text'))--}}
-{{--                    <div class="text-red-500 text-sm mt-1 absolute">{{ $errors->first('text') }}</div>--}}
+{{--                    <div class="absolute mt-1 text-sm text-red-500">{{ $errors->first('text') }}</div>--}}
 {{--                @endif--}}
-{{--                <button type="submit" class="mt-4 bg-black text-white px-2  text-sm sm:text-md  rounded-2xl mb-10  py-3">Отправить</button>--}}
+{{--                <button type="submit" class="mt-4 mb-10 rounded-2xl bg-black px-2 py-3 text-sm text-white sm:text-md">Отправить</button>--}}
 {{--            </form>--}}
 {{--        @endauth--}}
 
@@ -37,14 +37,14 @@
         </div>
         @foreach($answers as $answer)
             <div class="col-span-7">
-                <div class="px-5 py-3  grid grid-cols-12 items-center border-b-2 border-main drop-shadow-md">
+                <div class="grid grid-cols-12 items-center border-b-2 px-5 py-3 drop-shadow-md border-main">
                     <a href="{{route('profile',['id'=>$answer->user->id])}}" class="col-span-12 md:col-span-2">
-                        <div class="text-start ">
+                        <div class="text-start">
                             <div>{{$answer->user->login}}</div>
                             @if($answer->user->profile_photo_path)
-                                <img class="w-32 h-24 object-cover object-center my-3 hidden sm:block"  src="{{ URL::asset('storage/avatars/'.$answer->user->profile_photo_path)}}"    alt="Not found" />
+                                <img class="my-3 hidden h-24 w-32 object-cover object-center sm:block"  src="{{ URL::asset('storage/avatars/'.$answer->user->profile_photo_path)}}"    alt="Not found" />
                             @else
-                                <img class="h-16 my-3 hidden sm:block"  src="{{ URL::asset('storage/img/logo.svg')}}"    alt="Not found" />
+                                <img class="my-3 hidden h-16 sm:block"  src="{{ URL::asset('storage/img/logo.svg')}}"    alt="Not found" />
                             @endif
                             <div class="text-start text-sm NunitoSans">
                                 <p>{{$answer->user->city}}</p>
@@ -56,17 +56,17 @@
                     <div class="col-span-12 md:col-span-1">
 
                     </div>
-                    <div class="flex flex-col NunitoSans col-span-12 md:col-span-7">
+                    <div class="col-span-12 flex flex-col NunitoSans md:col-span-7">
                         <div>
-                            <p class="text-lg sm:text-2xl  font-extrabold">  </p>
+                            <p class="text-lg font-extrabold sm:text-2xl">  </p>
                             <p class="text-base sm:text-xl"> </p>
                         </div>
-                        <div class="flex gap-5 my-5 sm:my-0 text-base sm:text-xl">
+                        <div class="my-5 flex gap-5 text-base sm:my-0 sm:text-xl">
                             <pre>{{$answer->text}}</pre>
                         </div>
                     </div>
                     <div class="col-span-12 md:col-span-2">
-                        <div class="text-sm text-start md:text-right md:text-base">
+                        <div class="text-start text-sm md:text-right md:text-base">
                             {{$answer->created_at}}
                         </div>
                     </div>

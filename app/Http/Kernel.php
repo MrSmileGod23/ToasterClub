@@ -31,6 +31,7 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
+            \App\Http\Middleware\HandleInertiaRequests::class,
             \App\Http\Middleware\EncryptCookies::class,
 //            LastOnlineAt::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,

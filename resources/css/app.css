@@ -1,5 +1,64 @@
+/**
+ * Это вводит базовые стили Tailwind и любые базовые стили,
+ * зарегистрированные плагинами.
+ */
 @tailwind base;
+
+/**
+ * Это внедряет базовые классы компонентов Tailwind и любые классы компонентов,
+ * зарегистрированные плагинами.
+ */
 @tailwind components;
+
+/**
+ * Это внедряет служебные классы Tailwind и любые служебные классы,
+ * зарегистрированные плагинами.
+ */
 @tailwind utilities;
 
+/**
+ * Используйте эту директиву для управления тем, куда Tailwind вводит
+ * ответные варианты каждой утилиты.
+ *
+ * Если опущено, Tailwind по умолчанию добавит эти классы в самый конец
+ * Вашей таблицы стилей.
+ */
+@tailwind screens;
+
+
+
+
+body{
+    font-family: "MultiroundPro";
+}
+
+.underline-bold {
+    text-decoration: none;
+    position: relative;
+}
+.underline-bold:after {
+    position: absolute;
+    height: 6px;
+    margin: 0 auto;
+    content: '';
+    left: 0;
+    right: 0;
+    color: #000;
+    background-color: black;
+    border-radius: 50px;
+    bottom: -4px;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: #F3F3F3;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #FAAE18;
+    border: 3px solid #FAAE18;
+}
+.NunitoSans{
+    font-family: "Nunito Sans";
+}
 

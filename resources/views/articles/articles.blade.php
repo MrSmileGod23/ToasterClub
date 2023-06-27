@@ -4,16 +4,16 @@
 
 @section('content')
 
-    <div class="max-w-7xl pt-5 mx-auto h-auto px-5 xl:px-0">
+    <div class="mx-auto h-auto max-w-7xl px-5 pt-5 xl:px-0">
         @foreach($articles as $article)
             <a href="{{route('article.show',[$article->id])}}">
-                <div class="px-5 py-3 grid  sm:grid-cols-6 items-center border-b-2 border-main">
-                    <div class="text-start ">
+                <div class="grid items-center border-b-2 px-5 py-3 border-main sm:grid-cols-6">
+                    <div class="text-start">
                         <div>{{$article->user->login}}</div>
                         @if($article->user->profile_photo_path)
-                            <img class="w-32 h-24 object-cover object-center my-3 hidden sm:block"  src="{{ URL::asset('storage/avatars/'.$article->user->profile_photo_path)}}"    alt="Not found" />
+                            <img class="my-3 hidden h-24 w-32 object-cover object-center sm:block"  src="{{ URL::asset('storage/avatars/'.$article->user->profile_photo_path)}}"    alt="Not found" />
                         @else
-                            <img class="h-16 my-3 hidden sm:block"  src="{{ URL::asset('storage/img/logo.svg')}}"    alt="Not found" />
+                            <img class="my-3 hidden h-16 sm:block"  src="{{ URL::asset('storage/img/logo.svg')}}"    alt="Not found" />
                         @endif
                         <div class="text-start text-sm NunitoSans">
                             <p>{{$article->user->city}}</p>
@@ -21,13 +21,13 @@
                         </div>
 
                     </div>
-                    <div class="flex flex-col col-span-3 NunitoSans">
+                    <div class="col-span-3 flex flex-col NunitoSans">
                         <div>
-                            <p class="text-lg sm:text-2xl  font-extrabold">{{$article->title}}  </p>
+                            <p class="text-lg font-extrabold sm:text-2xl">{{$article->title}}  </p>
 
                         </div>
                     </div>
-                    <div class="hidden sm:flex  h-full col-span-2 text-base sm:text-xl NunitoSans justify-end items-end">
+                    <div class="col-span-2 hidden h-full items-end justify-end text-base NunitoSans sm:flex sm:text-xl">
                         {{$article->created_at}}
                     </div>
                 </div>

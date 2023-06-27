@@ -3,23 +3,23 @@
 
 
 @section('content')
-    <div class="max-w-7xl pt-5 mx-auto h-full grid grid-rows-1 lg:grid-cols-7 px-5 xl:px-0">
+    <div class="mx-auto grid h-full max-w-7xl grid-rows-1 px-5 pt-5 lg:grid-cols-7 xl:px-0">
         <div class="col-span-5 pr-0 lg:pr-10">
             @foreach($treeView as $key => $category)
-            <div id="dropdown-wrapper-{{$key+1}}" class="flex flex-col mb-4">
-                <button onclick="toggleMenu{{$key+1}}()" class="flex justify-between items-center w-full py-5 px-3 bg-main text-2xl text-black shadow-xl">
-                        <p class="text-base sm:text-2xl text-left">{{$category->title}}</p>
+            <div id="dropdown-wrapper-{{$key+1}}" class="mb-4 flex flex-col">
+                <button onclick="toggleMenu{{$key+1}}()" class="flex w-full items-center justify-between px-3 py-5 text-2xl text-black shadow-xl bg-main">
+                        <p class="text-left text-base sm:text-2xl">{{$category->title}}</p>
                     <img id="arrow{{$key+1}}" class="rotate-180" src="{{ URL::asset('storage/img/ARROW.svg') }}" />
                 </button>
-                <div id="menu{{$key+1}}" class="hidden flex flex-col bg-white drop-shadow-md">
+                <div id="menu{{$key+1}}" class="flex hidden flex-col bg-white drop-shadow-md">
                     @if($category->subcategories->count())
                         @foreach($category->subcategories as $subcategory)
                     <a href="{{route('forum.topics.all',[$subcategory->id])}}">
-                    <div class="px-5 py-3 grid  sm:grid-cols-6 items-center border-b-2 border-main">
-                        <img class="h-16 col-span-1 hidden sm:block" src="{{ URL::asset('storage/img/logo.svg') }}" />
-                        <div class="flex flex-col col-span-3 NunitoSans">
+                    <div class="grid items-center border-b-2 px-5 py-3 border-main sm:grid-cols-6">
+                        <img class="col-span-1 hidden h-16 sm:block" src="{{ URL::asset('storage/img/logo.svg') }}" />
+                        <div class="col-span-3 flex flex-col NunitoSans">
                             <div>
-                                <p class="text-lg sm:text-2xl  font-extrabold">{{$subcategory->title}}  </p>
+                                <p class="text-lg font-extrabold sm:text-2xl">{{$subcategory->title}}  </p>
                                 <p class="text-base sm:text-xl">{{$subcategory->text}}  </p>
                             </div>
                             <div class="flex gap-5 text-base sm:text-xl">
@@ -27,7 +27,7 @@
                                 <p>Сообщений: {{$subcategory->getAnswersCountAttribute()}}</p>
                             </div>
                         </div>
-                        <div class="hidden sm:flex  h-full col-span-2 text-base sm:text-xl NunitoSans justify-end items-end">
+                        <div class="col-span-2 hidden h-full items-end justify-end text-base NunitoSans sm:flex sm:text-xl">
                             {{$subcategory->created_at}}
                         </div>
 
@@ -40,16 +40,16 @@
             </div>
             @endforeach
         </div>
-        <div class="col-span-5 lg:col-span-2  grid-rows-2">
-            <div id="dropdown-wrapper-lastThemes" class="flex flex-col mb-4">
-                <button onclick="toggleMenulastThemes()" class="flex justify-between items-center w-full py-5 px-3 bg-main text-2xl text-black shadow-xl">
+        <div class="col-span-5 grid-rows-2 lg:col-span-2">
+            <div id="dropdown-wrapper-lastThemes" class="mb-4 flex flex-col">
+                <button onclick="toggleMenulastThemes()" class="flex w-full items-center justify-between px-3 py-5 text-2xl text-black shadow-xl bg-main">
                     <p class="text-base sm:text-2xl">Последние темы</p>
                     <img id="arrowlastThemes" class="rotate-180" src="{{ URL::asset('storage/img/ARROW.svg') }}" />
                 </button>
-                <div id="menulastThemes" class="hidden flex flex-col bg-white drop-shadow-md">
+                <div id="menulastThemes" class="flex hidden flex-col bg-white drop-shadow-md">
                     @foreach($lastTopics as $lastTopic)
                     <a href="{{route('forum.topic.show',[$lastTopic->id])}}">
-                        <div class="px-5 py-3 NunitoSans items-center border-b-2 border-main">
+                        <div class="items-center border-b-2 px-5 py-3 NunitoSans border-main">
                             <p class="text-xl capitalize">{{$lastTopic->title}}  </p>
                             <p class="text-sm">{{$lastTopic->text}}  </p>
                             <p class="text-sm">{{$lastTopic->created_at}}  </p>
@@ -58,14 +58,14 @@
                     @endforeach
                 </div>
             </div>
-            <div id="dropdown-wrapper-Forum" class="flex flex-col mb-4">
-                <button onclick="toggleMenuForum()" class="flex justify-between items-center w-full py-5 px-3 bg-main text-2xl text-black shadow-xl">
+            <div id="dropdown-wrapper-Forum" class="mb-4 flex flex-col">
+                <button onclick="toggleMenuForum()" class="flex w-full items-center justify-between px-3 py-5 text-2xl text-black shadow-xl bg-main">
                     <p class="text-base sm:text-2xl">Статистика форума</p>
                     <img id="arrowForum" class="rotate-180" src="{{ URL::asset('storage/img/ARROW.svg') }}" />
                 </button>
-                <div id="menuForum" class="hidden flex flex-col bg-white drop-shadow-md">
+                <div id="menuForum" class="flex hidden flex-col bg-white drop-shadow-md">
                         <a href="">
-                            <div class="px-5 py-3 grid grid-rows-4 NunitoSans items-center border-b-2 border-main">
+                            <div class="grid grid-rows-4 items-center border-b-2 px-5 py-3 NunitoSans border-main">
                                 <p class="text-base">Тем: {{$countTopics}} </p>
                                 <p class="text-base">Категорий: {{$countCategories}} </p>
                                 <p class="text-base">Подкатегорий: {{$countSubcategories}} </p>

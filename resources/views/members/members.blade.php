@@ -4,37 +4,37 @@
 
 @section('content')
 
-    <div class="max-w-7xl pt-5 mx-auto h-auto px-5 xl:px-0">
+    <div class="mx-auto h-auto max-w-7xl px-5 pt-5 xl:px-0">
         <div>
-            <form class="bg-main grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-5 gap-5 h-full justify-between p-4 shadow-header" method="POST" action="{{route('members.search')}}">
+            <form class="grid h-full grid-cols-1 grid-rows-2 justify-between gap-5 p-4 bg-main shadow-header md:grid-cols-5 md:grid-rows-1" method="POST" action="{{route('members.search')}}">
                 @csrf
-                <input class="rounded-2xl shadow-header h-full md:col-span-4 px-4 text-2xl NunitoSans" type="text" name="search"/>
-                <button class="bg-white text-main shadow-header px-3 py-2 rounded-2xl text-2xl md:col-span-1">Поиск</button>
+                <input class="h-full rounded-2xl px-4 text-2xl shadow-header NunitoSans md:col-span-4" type="text" name="search"/>
+                <button class="rounded-2xl bg-white px-3 py-2 text-2xl text-main shadow-header md:col-span-1">Поиск</button>
             </form>
         </div>
         <div>
             @isset($users)
                 @foreach($users as $user)
                     <a href="{{route('profile',[$user->id])}}">
-                        <div class="px-5 py-3 grid  grid-cols-10 items-center border-b-2 border-main">
+                        <div class="grid grid-cols-10 items-center border-b-2 px-5 py-3 border-main">
                             @if($user->profile_photo_path)
-                                <img class="w-32 h-24 mx-auto sm:mx-0 object-cover object-center col-span-10 sm:col-span-1 sm:block text-center" src="{{ URL::asset('storage/avatars/'.$user->profile_photo_path) }}" alt="Not found"/>
+                                <img class="col-span-10 mx-auto h-24 w-32 object-cover object-center text-center sm:col-span-1 sm:mx-0 sm:block" src="{{ URL::asset('storage/avatars/'.$user->profile_photo_path) }}" alt="Not found"/>
                             @else
-                                <img class="w-32 h-24 mx-auto sm:mx-0  col-span-10 sm:col-span-1 sm:block text-center" src="{{ URL::asset('storage/img/logo.svg')}}" alt="Not found"/>
+                                <img class="col-span-10 mx-auto h-24 w-32 text-center sm:col-span-1 sm:mx-0 sm:block" src="{{ URL::asset('storage/img/logo.svg')}}" alt="Not found"/>
                             @endif
 
                             <div class="col-span-10 sm:col-span-1">
 
                             </div>
-                            <div class="flex flex-col col-span-10 text-center sm:text-start sm:col-span-4 NunitoSans">
+                            <div class="col-span-10 flex flex-col text-center NunitoSans sm:col-span-4 sm:text-start">
                                 <div>
-                                    <p class="text-lg sm:text-2xl  font-extrabold">{{$user->login}}  </p>
+                                    <p class="text-lg font-extrabold sm:text-2xl">{{$user->login}}  </p>
                                     <p class="text-base sm:text-xl">{{$user->car}} {{$user->car_body}} {{$user->car_year}}  </p>
                                 </div>
                             </div>
-                            <div class="flex flex-col col-span-10 text-center sm:text-start sm:col-span-4 NunitoSans">
+                            <div class="col-span-10 flex flex-col text-center NunitoSans sm:col-span-4 sm:text-start">
                                 <div>
-                                    <p class="text-lg sm:text-2xl  font-extrabold">{{$user->city}}  </p>
+                                    <p class="text-lg font-extrabold sm:text-2xl">{{$user->city}}  </p>
                                     <p class="text-base sm:text-xl">{{$user->vk}}</p>
                                 </div>
                             </div>

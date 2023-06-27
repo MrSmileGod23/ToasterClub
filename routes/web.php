@@ -15,9 +15,28 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TopicController;
 use Illuminate\Http\File;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/clear',function (){
 
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('key:generate');
+
+    return "Cleared";
+});
+
+Route::get('/database',function (){
+
+    Artisan::call('migrate:refresh');
+    Artisan::call('db:seed');
+
+    return "Migrated and Seeder";
+
+});
 
 Route::get('/',[PageController::class,'index'])->name('/');
 

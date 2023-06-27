@@ -5,6 +5,6 @@
 @section('content')
 
 
-    <p class="text-center mt-5 text-2xl">Этот отдел на этапе разработки</p>
+    <p class="mt-5 text-center text-2xl">Этот отдел на этапе разработки</p>
 
 @endsection
