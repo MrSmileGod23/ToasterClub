@@ -1,3 +1,16 @@
+![](storage/app/public/img/logo.svg)
+
+# ToasterClub on Inertia.js
+
+With Inertia you are able to build single-page applications using classic server-side routing and controllers, without building an API.
+
+This application is a the original forum for Toaster Club written in Laravel and Vue.js.
+
+The frontend is written in Vue.js, a modern client-side JavaScript framework for building Single Page Applications.
+The backend is building  on API using Laravel
+
+![](screenshot.png)
+
 ## Installation
 
 Clone the repo locally:
