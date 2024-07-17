@@ -68,6 +68,12 @@ Run database seeder:
 php artisan db:seed
 ```
 
+Run artisan storage:
+
+```sh
+php artisan storage:link
+```
+
 Run artisan server:
 
 ```sh
