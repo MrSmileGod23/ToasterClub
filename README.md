@@ -49,7 +49,7 @@ php artisan key:generate
 Create an SQLite database. You can also use another database (MySQL, Postgres), simply update your configuration accordingly.
 
 ```sh
-touch database/database.sqlite
+New-Item -ItemType file database/database.sqlite
 ```
 
 Run database migrations:
